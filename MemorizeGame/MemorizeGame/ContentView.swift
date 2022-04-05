@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var count = 4
-    let emojis = ["🚲", "🚂", "🚁", "🚜", "🚕", "🏎", "🚑", "🚓", "🚒", "✈️", "🚀", "⛵️", "🛸", "🛶", "🚌", "🏍", "🛺", "🚠", "🛵", "🚗", "🚚", "🚇", "🚙", "🚝"]
+  
+    @ObservedObject var game = EmojiMemoryGame()
     
     var body: some View {
         VStack {
@@ -17,59 +17,33 @@ struct ContentView: View {
             Spacer()
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
-                    ForEach(emojis[0..<count], id: \.self) {
-                        CardView(content: $0).aspectRatio(2/3, contentMode: .fit)
+                    ForEach(game.cards) { card in
+                        CardView(card: card).aspectRatio(2/3, contentMode: .fit)
+                            .onTapGesture { game.onChoose(card) }
                     }
                 }
-            }
-            Spacer()
-            HStack {
-                addButton
-                Spacer()
-                removeButton
             }
         }
         .font(.largeTitle)
         .padding(.horizontal)
     }
-    
-    var addButton: some View {
-        Button {
-            if count < emojis.count {
-                count += 1
-            }
-        } label: {
-            Image(systemName: "plus.circle")
-        }
-    }
-    
-    var removeButton: some View {
-        Button {
-            if count > 1 {
-                count -= 1
-            }
-        } label: {
-            Image(systemName: "minus.circle")
-        }
-    }
 }
 
 struct CardView: View {
-    @State var isFaceUp = true
-    let content: String
+    let card: MemoryGame<String>.Card
+    
     var body: some View {
         ZStack {
             let shape = RoundedRectangle(cornerRadius: 20)
-            if isFaceUp {
+            if card.isMatched {
+                shape.opacity(0)
+            } else if card.isFaceUp {
                 shape.fill().foregroundColor(.white)
                 shape.strokeBorder(lineWidth: 3)
-                Text(content)
+                Text(card.content)
             } else {
                 shape.fill()
             }
-        }
-        .onTapGesture {
-            isFaceUp.toggle()
         }
         .foregroundColor(.red)
     }
