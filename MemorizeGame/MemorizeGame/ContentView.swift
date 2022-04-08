@@ -13,16 +13,28 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Memorize!")
+            Text("Memorize!") 
+            HStack {
+                Text("score: \(game.score)")
+                Spacer()
+                Text(game.themeName)
+            }
             Spacer()
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
                     ForEach(game.cards) { card in
                         CardView(card: card).aspectRatio(2/3, contentMode: .fit)
                             .onTapGesture { game.onChoose(card) }
+                            .foregroundColor(game.themeColor)
                     }
                 }
             }
+            Button {
+                game.onNewGameTap()
+            } label: {
+                Text("New Game")
+            }
+
         }
         .font(.largeTitle)
         .padding(.horizontal)
@@ -45,7 +57,6 @@ struct CardView: View {
                 shape.fill()
             }
         }
-        .foregroundColor(.red)
     }
 }
 

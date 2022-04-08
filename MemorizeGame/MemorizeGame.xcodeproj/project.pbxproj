@@ -11,8 +11,10 @@
 		3467741C27F8E36600171E79 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3467741B27F8E36600171E79 /* ContentView.swift */; };
 		3467741E27F8E36700171E79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3467741D27F8E36700171E79 /* Assets.xcassets */; };
 		3467742127F8E36700171E79 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3467742027F8E36700171E79 /* Preview Assets.xcassets */; };
+		34C6C97627FCFD1700EF65A9 /* Emojis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C6C97527FCFD1700EF65A9 /* Emojis.swift */; };
 		34E5175D27FAF67700C81907 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E5175B27FAF67700C81907 /* EmojiMemoryGame.swift */; };
 		34E5175E27FAF67700C81907 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E5175C27FAF67700C81907 /* MemoryGame.swift */; };
+		34E70E8027FF7C96003AE619 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E70E7F27FF7C96003AE619 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +23,10 @@
 		3467741B27F8E36600171E79 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3467741D27F8E36700171E79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3467742027F8E36700171E79 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		34C6C97527FCFD1700EF65A9 /* Emojis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emojis.swift; sourceTree = "<group>"; };
 		34E5175B27FAF67700C81907 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		34E5175C27FAF67700C81907 /* MemoryGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
+		34E70E7F27FF7C96003AE619 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				34E5175B27FAF67700C81907 /* EmojiMemoryGame.swift */,
 				34E5175C27FAF67700C81907 /* MemoryGame.swift */,
 				3467741B27F8E36600171E79 /* ContentView.swift */,
+				34C6C97527FCFD1700EF65A9 /* Emojis.swift */,
+				34E70E7F27FF7C96003AE619 /* Theme.swift */,
 				3467741D27F8E36700171E79 /* Assets.xcassets */,
 				3467741F27F8E36700171E79 /* Preview Content */,
 			);
@@ -145,6 +151,8 @@
 			files = (
 				3467741C27F8E36600171E79 /* ContentView.swift in Sources */,
 				3467741A27F8E36600171E79 /* MemorizeGameApp.swift in Sources */,
+				34C6C97627FCFD1700EF65A9 /* Emojis.swift in Sources */,
+				34E70E8027FF7C96003AE619 /* Theme.swift in Sources */,
 				34E5175E27FAF67700C81907 /* MemoryGame.swift in Sources */,
 				34E5175D27FAF67700C81907 /* EmojiMemoryGame.swift in Sources */,
 			);
@@ -286,7 +294,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,7 +325,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
