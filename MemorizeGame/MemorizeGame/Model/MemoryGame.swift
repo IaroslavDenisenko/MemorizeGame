@@ -19,7 +19,10 @@ struct MemoryGame<CardContent: Equatable> {
 
     var cards = [Card]()
     var score: Int
-    var faceUpCardIndex: Int?
+    private var faceUpCardIndex: Int? {
+        get { cards.indices.filter { cards[$0].isFaceUp }.onlyOne }
+        set { cards.indices.forEach { cards[$0].isFaceUp = ($0 == newValue) } }
+    }
     
     init(numberOfPairs: Int, createCardContent: (Int) -> CardContent) {
         cards = [Card]()
@@ -48,14 +51,16 @@ struct MemoryGame<CardContent: Equatable> {
                     cards[faceUpCardIndex].hasBeenSeen = true
                     cards[chosenIndex].hasBeenSeen = true
                 }
-                self.faceUpCardIndex = nil
+                cards[chosenIndex].isFaceUp = true
             } else {
-                for index in cards.indices {
-                    cards[index].isFaceUp = false
-                }
                 faceUpCardIndex = chosenIndex
             }
-            cards[chosenIndex].isFaceUp.toggle()
         }
+    }
+}
+
+private extension Array {
+    var onlyOne: Element? {
+        count == 1 ? first : nil
     }
 }

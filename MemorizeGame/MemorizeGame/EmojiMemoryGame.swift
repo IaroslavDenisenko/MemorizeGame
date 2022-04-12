@@ -10,9 +10,11 @@ import SwiftUI
 
 final class EmojiMemoryGame: ObservableObject {
     
+    typealias Card = MemoryGame<String>.Card
+    
     private static let themes: [Theme<String>] = [
         .init(name: "Animals", content: Emojis.animals, numberOfPairs: 9, color: .red),
-        .init(name: "Plants", content: Emojis.plants, numberOfPairs: 5, color: .green),
+        .init(name: "Flowers", content: Emojis.plants, numberOfPairs: 5, color: .green),
         .init(name: "Vehicles", content: Emojis.vehicles, numberOfPairs: 6, color: .blue),
         .init(name: "Food", content: Emojis.food, numberOfPairs: 8, color: .orange),
         .init(name: "Clothes", content: Emojis.clothes, numberOfPairs: 7, color: .brown),
@@ -35,7 +37,7 @@ final class EmojiMemoryGame: ObservableObject {
     var themeName: String {
         theme.name
     }
-    var cards: [MemoryGame<String>.Card] {
+    var cards: [Card] {
         game.cards
     }
     var score: Int {
@@ -66,7 +68,7 @@ final class EmojiMemoryGame: ObservableObject {
     
     // MARK: - Intent(s)
     
-    func onChoose(_ card: MemoryGame<String>.Card) {
+    func onChoose(_ card: Card) {
         game.choose(card)
     }
     
